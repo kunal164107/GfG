@@ -1,0 +1,15 @@
+C++
+--------------------------------
+
+3)  Map STL in c++
+4)  STL in c++
+5)  algorithm STL in C++
+6)  #include<bits/stdc++.h>  what does this mean?\
+7)  OOPS in c++
+
+
+
+
+ML
+-------------------------------
+1)  how to choose the choice of feature so that i can fit the best possible curve for my problem

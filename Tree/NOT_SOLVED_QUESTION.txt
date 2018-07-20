@@ -25,6 +25,7 @@ Binary Tree
 22) Calculate depth of a full Binary tree from Preorder
 23) Number of Binary Trees for given Preorder Sequence length
 24) Modify a binary tree to get preorder traversal using right pointers only
+25) Construct a tree from Inorder and Level order traversals
 
 
 
@@ -34,7 +35,8 @@ Binary Tree
 Known Concept Question
 -----------------------
 1)  Level order traversal line by line | Set 2 (Using Two Queues)
-
+2)  Find sum of all nodes of the given perfect binary tree  // this question will become good if product of all node is asked or parent are the product of its children then find sum
+3)  Diagonal Sum of a Binary Tree
 
 
 

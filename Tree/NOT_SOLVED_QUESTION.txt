@@ -10,7 +10,6 @@ Binary Tree
 7)  Expression Tree --> getting segmentation error
 8)  Inorder Tree Traversal without Recursion
 9)  Inorder Tree Traversal without recursion and without stack!
-10) Print Postorder traversal from given Inorder and Preorder traversals
 11) Construct BST from given preorder traversal | Set 1
 12) Find postorder traversal of BST from preorder traversal
 13) Find all possible binary trees with given Inorder Traversal
@@ -25,10 +24,10 @@ Binary Tree
 22) Calculate depth of a full Binary tree from Preorder
 23) Number of Binary Trees for given Preorder Sequence length
 24) Modify a binary tree to get preorder traversal using right pointers only
-25) Construct a tree from Inorder and Level order traversals
-
-
-
+27) Find the maximum path sum between two leaves of a binary tree
+28) Construct tree from ancestor matrix
+29) Construct Ancestor Matrix from a Given Binary Tree
+30) Create a Doubly Linked List from a Ternary Tree
 
 
 
@@ -37,8 +36,8 @@ Known Concept Question
 1)  Level order traversal line by line | Set 2 (Using Two Queues)
 2)  Find sum of all nodes of the given perfect binary tree  // this question will become good if product of all node is asked or parent are the product of its children then find sum
 3)  Diagonal Sum of a Binary Tree
-
-
+4)  Construct a complete binary tree from given array in level order fashion
+5)  Find the maximum sum leaf to root path in a Binary Tree
 
 
 

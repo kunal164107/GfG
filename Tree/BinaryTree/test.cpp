@@ -1,19 +1,18 @@
 #include <iostream>
 #include <queue>
-#include <vector>
 
 using namespace std;
 
 class node{
 	public:
 		int data;
-		node* left;
-		node* right;
+		Node* left;
+		Node* right;
 };
 
-node* getnewnode(int key){
+Node* newNode(int key){
 	
-	node* newnode = new node();
+	Node* newnode = new node();
 	newnode->data = key;
 	newnode->left = NULL;
 	newnode->right = NULL;
@@ -21,13 +20,17 @@ node* getnewnode(int key){
 	return newnode;
 }
 
-void levelorder(node* root){
+void levelorder(Node* root){
 	
-	queue<node*> q;
+	if(root==NULL){
+		cout<<"empty tree";
+		return;
+	}
+	queue<Node*> q;
 	q.push(root);
 	
 	while(!q.empty()){
-		node* current = q.front();
+		Node* current = q.front();
 		if(current->left!=NULL){
 			q.push(current->left);
 		}
@@ -37,67 +40,59 @@ void levelorder(node* root){
 		cout<<current->data<<" ";
 		q.pop();
 	}
-	
+	cout<<endl;
 }
 
-int sumOfLongRootToLeafPath(node* root);
-
+Node* constructTree(Node* root,int *parent,int size);
 int main(){
 	
-	node* root = NULL;
+	int parent[] = {1, 5, 5, 2, 2, -1, 3};
 	
-	root = getnewnode(1);
-	root->left = getnewnode(2);
-	root->right = getnewnode(3);
-	// root->right->right = getnewnode(11);
-	// root->right->right->left = getnewnode(1);
-	// root->left->left = getnewnode(9);
-	// root->left->right = getnewnode(7);
-	// root->left->right->left = getnewnode(1);
-	// root->left->right->right = getnewnode(12);
-	// root->left->right->right->right = getnewnode(2);
-	
-	cout<<sumOfLongRootToLeafPath(root);
+	Node* root = NULL;
+	root = constructTree(root,parent,7);
+	levelorder(root);
 	
 	return 0;
-	
 }
-vector<node*> v;
-int maxsum=0, maxlength=0;
-int findmaxsum(node* root);
 
-int sumOfLongRootToLeafPath(node* root)
-{
-	// Code here
-	if(root==NULL) return 0;
-	return findmaxsum(root);
-	
-	
-}
-int findmaxsum(node* root){
+int i=0;
 
-    if(root==NULL) return 0;
-    v.push_back(root);
+Node* constructTree(Node* root,int *parent,int size){
 	
-	findmaxsum(root->left);
-    findmaxsum(root->right);
-	
-	// for(int i=0;i<v.size();i++){
-		// cout<<v[i]->data<<" ";
-	// }
-	// cout<<endl;
-		
-	int sum=0;
-	for(int i=0;i<v.size();i++){
-		sum = sum + v[i]->data;
+	if(root==NULL){
+		for(int i=0;i<size;i++){
+			if(parent[i]==-1){
+				root = newNode(i);
+				break;
+			}
+		}
+		constructTree(root,parent,size);
+		return root;
 	}
-	// cout<<"sum "<<sum<<endl;;
-	
-    if(v.size()>=maxlength){
-		// cout<<"chk"<<endl;
-        maxsum = max(sum,maxsum);
-		maxlength=v.size();
-    }
-    v.pop_back();
-    return maxsum;
+	else{
+		// cout<<"root"<<root->data<<endl;
+		int count=0;
+		for(int i=0;i<size;i++){
+			// cout<<"chk5"<<endl;
+			if(parent[i]==root->data){
+				// cout<<"chk2"<<endl;
+				count++;
+				if(count==1){
+					// cout<<"chk3"<<endl;
+					root->left = newNode(i);
+					// cout<<"root "<<root->data<<endl;
+					// cout<<"root->left "<<root->left->data<<endl;
+					constructTree(root->left,parent,size);
+				} 
+				else if(count==2){
+					// cout<<"chk4"<<endl;
+					root->right = newNode(i);
+					// cout<<"root "<<root->data<<endl;
+					// cout<<"root->right "<<root->right->data<<endl;
+					constructTree(root->right,parent,size);
+				} 
+			}	
+		} 
+	}
+	return root;
 }

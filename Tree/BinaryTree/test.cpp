@@ -1,98 +1,87 @@
-#include <iostream>
-#include <queue>
-
+#include<bits/stdc++.h>
 using namespace std;
-
-class node{
-	public:
-		int data;
-		Node* left;
-		Node* right;
+struct Node{
+int data;
+Node *left,*right;
 };
-
-Node* newNode(int key){
-	
-	Node* newnode = new node();
-	newnode->data = key;
-	newnode->left = NULL;
-	newnode->right = NULL;
-	
-	return newnode;
+Node *newNode(int data){
+	Node *a=new Node;
+	a->data=data;
+	a->left=a->right=NULL;
+	return a;
+}
+void insert(Node *root,int a1,int a2,char lr){
+	if(root==NULL)
+		return;
+	if(root->data==a1){
+		switch(lr){
+			case 'L':root->left=newNode(a2);
+			break;
+			case 'R':root->right=newNode(a2);
+			break;
+		}
+	}
+	else{
+		insert(root->left,a1,a2,lr);
+		insert(root->right,a1,a2,lr);
+	}
+}
+int mn=0;
+int aa[10000];
+void printVertical(Node *root);
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		memset(aa,0,sizeof(aa));
+		int n;
+		cin>>n;
+		mn=0;
+		Node *root=NULL;
+		while(n--){
+			int a1,a2;
+			char lr;
+			cin>>a1>>a2;
+			scanf(" %c",&lr);
+			if(root==NULL){
+				root=newNode(a1);
+				switch(lr){
+					case 'L':root->left=newNode(a2);
+					break;
+					case 'R':root->right=newNode(a2);
+					break;
+				}
+			}
+			else{
+				insert(root,a1,a2,lr);
+			}
+		}
+		printVertical(root);
+		cout<<endl;
+	}
 }
 
-void levelorder(Node* root){
-	
-	if(root==NULL){
-		cout<<"empty tree";
-		return;
-	}
-	queue<Node*> q;
-	q.push(root);
-	
-	while(!q.empty()){
-		Node* current = q.front();
-		if(current->left!=NULL){
-			q.push(current->left);
-		}
-		if(current->right!=NULL){
-			q.push(current->right);
-		}
-		cout<<current->data<<" ";
-		q.pop();
+
+
+void verticalsum(Node* root,int hd,map<int,int>&);
+void printVertical(Node *root)
+{
+    map<int,int> mymap;
+    verticalsum(root,0,mymap);
+	for(auto itr=mymap.rbegin();itr!=mymap.rend();++itr){
+		cout<<itr->second<<" ";
 	}
 	cout<<endl;
 }
 
-Node* constructTree(Node* root,int *parent,int size);
-int main(){
-	
-	int parent[] = {1, 5, 5, 2, 2, -1, 3};
-	
-	Node* root = NULL;
-	root = constructTree(root,parent,7);
-	levelorder(root);
-	
-	return 0;
-}
-
-int i=0;
-
-Node* constructTree(Node* root,int *parent,int size){
-	
-	if(root==NULL){
-		for(int i=0;i<size;i++){
-			if(parent[i]==-1){
-				root = newNode(i);
-				break;
-			}
-		}
-		constructTree(root,parent,size);
-		return root;
-	}
+void verticalsum(Node* root,int hd,map<int,int> &mymap){
+	if(root==NULL) return;
+	if(mymap.find(hd)!=mymap.end()) mymap.find(hd)->second = mymap.find(hd)->second+root->data;
 	else{
-		// cout<<"root"<<root->data<<endl;
-		int count=0;
-		for(int i=0;i<size;i++){
-			// cout<<"chk5"<<endl;
-			if(parent[i]==root->data){
-				// cout<<"chk2"<<endl;
-				count++;
-				if(count==1){
-					// cout<<"chk3"<<endl;
-					root->left = newNode(i);
-					// cout<<"root "<<root->data<<endl;
-					// cout<<"root->left "<<root->left->data<<endl;
-					constructTree(root->left,parent,size);
-				} 
-				else if(count==2){
-					// cout<<"chk4"<<endl;
-					root->right = newNode(i);
-					// cout<<"root "<<root->data<<endl;
-					// cout<<"root->right "<<root->right->data<<endl;
-					constructTree(root->right,parent,size);
-				} 
-			}	
-		} 
+		mymap.insert(pair<int,int> (hd,root->data));
 	}
-	return root;
+	
+	verticalsum(root->left,hd+1,mymap);
+	verticalsum(root->right,hd-1,mymap);
+	
 }

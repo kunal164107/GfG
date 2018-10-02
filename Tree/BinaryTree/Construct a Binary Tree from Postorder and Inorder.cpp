@@ -20,12 +20,13 @@ node* getnewnode(int key){
 	return newnode;
 }
 
-void postorder(node* root){
+void preorder(node* root){
 	if(root==NULL) return;
 	
-	postorder(root->left);
-	postorder(root->right);
 	cout<<root->data<<" ";
+	preorder(root->left);
+	preorder(root->right);
+	
 }
 
 node* constructtree(node* root,int in[],int m1,int n1,int pre[],int m2,int n2);
@@ -42,7 +43,7 @@ int main(){
 	// cout<<root->left->data<<endl;
 	// cout<<root->right->data<<endl;
 	
-	postorder(root);
+	preorder(root);
 	
 	return 0;
 	

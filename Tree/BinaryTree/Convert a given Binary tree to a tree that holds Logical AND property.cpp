@@ -39,37 +39,33 @@ void levelorder(node* root){
 	cout<<endl;
 }
 
-
+void convert(node* root);
 int main(){
 		
-	node *root         = newNode(50);
-	root->left        = newNode(7);
-	root->right       = newNode(2);
-	root->left->left  = newNode(3);
-	root->left->right = newNode(5);
+	node *root         = newNode(1);
+	root->left         = newNode(1);
+	root->right        = newNode(0);
+	root->left->left   = newNode(0);
+	root->left->right  = newNode(1);
 	root->right->left  = newNode(1);
-	root->right->right = newNode(30);
+	root->right->right = newNode(1);
 	
 	levelorder(root);
-	bool result=true;
-	chkchildrensum(root,result);
-	if(result) cout<<"YES";
-	else cout<<"NO";
+	convert(root);
+	levelorder(root);
 	
 	return 0;
 }
 
-int chkchildrensum(node* root,bool& result){
-	if(root==NULL) return 0;
-	if(root->left==NULL && root->right==NULL) return root->data;
+void convert(node* root){
+	if(root==NULL) return;
 	
-	int leftsum = chkchildrensum(root->left,result);
-	int rightsum = chkchildrensum(root->right,result);
+	convert(root->left);
+	convert(root->right);
 	
-	if(root->data != (leftsum+rightsum)){
-		cout<<"root"<<root->data<<endl;
-		result=false;
-	} 
-	
-	return root->data;
+	if(root->left!=NULL && root->right!=NULL){
+		root->data = root->left->data & root->right->data;
+	}
+	else return;
+
 }

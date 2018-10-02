@@ -1,21 +1,12 @@
-SLL Section
+Linked List
 ------------
-
-
-DLL Section
--------------
 1)  The Great Tree-List Recursion Problem.
 2)  Create a Doubly Linked List from a Ternary Tree
 3)  Large number arithmetic using doubly linked list
 4)  Priority Queue using doubly linked list
-
-
-CLL Section
--------------
-1)  Circular Queue | Set 2 (Circular Linked List Implementation)
-2)  Convert singly linked list into circular linked list
-3)  Implementation of Deque using circular array
-
+5)  Circular Queue | Set 2 (Circular Linked List Implementation)
+6)  Convert singly linked list into circular linked list
+7)  Implementation of Deque using circular array
 
 
 Known Concept Question
@@ -28,12 +19,11 @@ Known Concept Question
 6)  Count nodes in Circular linked list
 7)  Exchange first and last nodes in Circular Linked List
 
-
-
+_________________________________________________________________________________________________________________________________________________________________
 
 
 Binary Tree
---------------------------------
+------------
 
 1)  Enumeration of Binary Trees
 2)  Handshaking Lemma and Interesting Tree Properties
@@ -44,34 +34,34 @@ Binary Tree
 7)  Expression Tree --> getting segmentation error
 8)  Inorder Tree Traversal without Recursion
 9)  Inorder Tree Traversal without recursion and without stack!
-11) Construct BST from given preorder traversal | Set 1
-12) Find postorder traversal of BST from preorder traversal
-13) Find all possible binary trees with given Inorder Traversal
-14) Populate Inorder Successor for all nodes
-15) code levelorder using recursion
-16) Morris traversal for Preorder
-17) Iterative Preorder Traversal
-18) Iterative Postorder Traversal | Set 1 (Using Two Stacks)
-19) Iterative Postorder Traversal | Set 2 (Using One Stack)
-20) Postorder traversal of Binary Tree without recursion and without stack
-21) Diagonal Traversal of Binary Tree                                       // use recursion to solve this prblm
-22) Calculate depth of a full Binary tree from Preorder
-23) Number of Binary Trees for given Preorder Sequence length
-24) Modify a binary tree to get preorder traversal using right pointers only
-27) Create a Doubly Linked List from a Ternary Tree
-28) Construct tree from ancestor matrix
-29) Construct Ancestor Matrix from a Given Binary Tree
-30) Find the maximum path sum between two leaves of a binary tree                      
-31) Print all k-sum paths in a binary tree
-32) Maximum sum of nodes in Binary tree such that no two are adjacent
-36) Vertical Sum in Binary Tree | Set 2 (Space Optimized)
-37) Creating a tree with Left-Child Right-Sibling Representation
-38) Prufer Code to Tree Creation
-39) Construct the full k-ary tree from its preorder traversal
-40) Convert a tree to forest of even nodes
-41) Convert Ternary Expression to a Binary Tree
-42) Flip Binary Tree
-43) Minimum swap required to convert binary tree to binary search tree
+10) Construct BST from given preorder traversal | Set 1
+11) Find postorder traversal of BST from preorder traversal
+12) Find all possible binary trees with given Inorder Traversal
+13) Populate Inorder Successor for all nodes
+14) code levelorder using recursion
+15) Morris traversal for Preorder
+16) Iterative Preorder Traversal
+17) Iterative Postorder Traversal | Set 1 (Using Two Stacks)
+18) Iterative Postorder Traversal | Set 2 (Using One Stack)
+19) Postorder traversal of Binary Tree without recursion and without stack
+20) Diagonal Traversal of Binary Tree                                       // use recursion to solve this prblm
+21) Calculate depth of a full Binary tree from Preorder
+22) Number of Binary Trees for given Preorder Sequence length
+23) Modify a binary tree to get preorder traversal using right pointers only
+24) Create a Doubly Linked List from a Ternary Tree
+25) Construct tree from ancestor matrix
+26) Construct Ancestor Matrix from a Given Binary Tree
+27) Find the maximum path sum between two leaves of a binary tree                      
+28) Print all k-sum paths in a binary tree
+29) Maximum sum of nodes in Binary tree such that no two are adjacent
+30) Vertical Sum in Binary Tree | Set 2 (Space Optimized)
+31) Creating a tree with Left-Child Right-Sibling Representation
+32) Prufer Code to Tree Creation
+33) Construct the full k-ary tree from its preorder traversal
+34) Convert a tree to forest of even nodes
+35) Flip Binary Tree
+36) Minimum swap required to convert binary tree to binary search tree
+37) Check if removing an edge can divide a Binary Tree in two halves
  
 
 
@@ -86,16 +76,134 @@ Known Concept Question
 7)  Maximum spiral sum in Binary Tree
 
 
-
+_________________________________________________________________________________________________________________________________________________________________
 
 Stack
----------------------
-1) Design a stack with operations on middle element         // BUG Present
+------
+1)  Design a stack with operations on middle element            // BUG Present
+2)  How to efficiently implement k stacks in a single array?
+3)  Design a stack that supports getMin() in O(1) time and O(1) extra space
+4)  How to implement stack using priority queue or heap?
+5)  The Celebrity Problem
+6)  Iterative Tower of Hanoi
+7)  Program for Tower of Hanoi
+8)  Count subarrays where second highest lie before highest
+
+
+Known Concept Question
+-----------------------
+1)  Number of NGEs to the right
+2)  Maximum product of indexes of next greater on left and right
+3)  Expression Evaluation
+4)  Print next greater number of Q queries
+5)  Prefix to Infix Conversion
+6)  Prefix to Postfix Conversion
+7)  Sort a stack using a temporary stack
+8)  Reverse a stack without using extra space in O(n)
+9)  Delete middle element of a stack
+10) Sorting array using Stacks
+11) Check if an array is stack sortable
+
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+Array
+------
+1)  Juggling algorithm for array rotation
+2)  Block swap algorithm for array rotation
+3)  Find the Rotation Count in Rotated Sorted array
+4)  Find maximum value of Sum( i*arr[i]) with only rotations on given array allowed
+5)  Maximum sum of i*arr[i] among all rotations of a given array
+6)  Minimum swaps required to bring all elements less than or equal to k together
+7)  K’th Smallest/Largest Element in Unsorted Array | Set 1   					// solve without using any stl library  and in O(n) time
+8)  Kth smallest element in a row-wise and column-wise sorted 2D array | Set 1
+9)  Median of Stream of Running Integers using STL
+10) Minimum product of k integers in an array of positive Integers				// Big Number problem
+11) K maximum sums of overlapping contiguous sub-arrays
+12) K maximum sums of non-overlapping contiguous sub-arrays
+13) Print n smallest elements from given array in their original order          // @ Q17 of order statistics and gfg answer is wrong for duplicates
+14) Positive elements at even and negative at odd positions
+15) Rearrange an array in maximum minimum form | Set 2 (O(1) extra space)
+16) Maximum sum such that no two elements are adjacent
+17) k smallest elements in same order using O(1) extra space
+18) Find k pairs with smallest sums in two arrays
+19) k-th smallest absolute difference of two elements in an array
+20) Find Second largest element in an array
+21) Find k numbers with most occurrences in the given array
+22) Find the smallest and second smallest elements in an array
+23) Find the smallest missing number
+24) Maximum sum such that no two elements are adjacent
+25) Maximum and minimum of an array using minimum number of comparisons
+26) MO’s Algorithm
 
 
 
+Known Concept Question
+-----------------------
+1)  Reversal algorithm for right rotation of an array
+2)  Move all zeroes to end of array | Set-2 (Using single traversal)
+3)  K’th Smallest/Largest Element using STL
+4)  Program for Mean and median of an unsorted array
+5)  K-th Largest Sum Contiguous Subarray											// 	Solve using min-heap
+6) 	K maximum sum combinations from two arrays                                   	//  Optimize it
+7)  Segregate even and odd numbers | Set 3
+8)  Positive elements at even and negative at odd positions
+9)  Rearrange array such that even index elements are smaller and odd index elements are greater
+10) Rearrange an array in maximum minimum form | Set 1
+11) Rearrange an array such that ‘arr[j]’ becomes ‘i’ if ‘arr[i]’ is ‘j’ | Set 1	//	Optimize it
 
 
+_________________________________________________________________________________________________________________________________________________________________
+
+Queue
+------
+1)  LRU Cache Implementation
+2)  How to efficiently implement k Queues in a single array?
+3)  Breadth First Search or BFS for a Graph
+4)  Reverse a path in BST using queue
+5)  Program for Page Replacement Algorithms | Set 2 (FIFO)
+6)  Check whether a given Binary Tree is Complete or not | Set 1 (Iterative Solution)
+7)	Number of siblings of a given Node in n-ary Tree
+8)  Sorting a Queue without extra space
+
+
+
+Known Concept Question
+-----------------------
+1)  Implementation of Deque using circular array
+2)  Circular Queue
+3)  Implement Queue using Stacks
+4)  Implement Stack using Queues
+5)  Implement a stack using single queue
+6)  Implement Stack and Queue using Deque
+7)  Priority Queue using doubly linked list
+8)  Level Order Tree Traversal
+9)  Construct Complete Binary Tree from its Linked List Representation
+10) Interleave the first half of the queue with second half
+
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+String
+--------
+1) Rearrange characters in a string such that no two adjacent are same            // solve using heap
+
+
+
+Known Concept Question
+-----------------------
+1)  Function to copy string (Iterative and Recursive)
+2)  Program to check if input is an integer or a string
+3)  Program to find the initials of a name
+4)  Find one extra character in a string				// Solve once again using bit algorithm
+5)  Change string to a new character set
+
+
+Divide and Conquer
+----------------------
+1)  Tiling Problem										// make code for this question
 
 
 

@@ -30,7 +30,6 @@ void merge(int arr[],int l[],int r[],int n1,int n2){
 	}
 }
 
-
 void mergesort(int arr[],int n){
 	
 	if(n==1){
@@ -58,6 +57,55 @@ void mergesort(int arr[],int n){
 }
 
 
+/*
+
+	wrong method of using merge function as it overrides the whole array 
+
+void merge(int* arr,int start1,int end1,int start2,int end2){
+	int k = start1;
+	while(start1<=end1 && start2<=end2 && k<=end2){
+		if(arr[start1]<=arr[start2]){
+			arr[k] = arr[start1];
+			start1++;
+		}
+		else{
+			arr[k] = arr[start2];
+			start2++;
+		}
+		k++;
+	}
+	
+	while(start1<=end1 && k<=end2){
+		arr[k] = arr[start1];
+		start1++;
+		k++;
+	}
+	
+	while(start2<=end2 && k<=end2){
+		arr[k] = arr[start2];
+		start2++;
+		k++;
+	}
+	
+}
+
+*/
+
+/*
+
+void mergesort(int* arr,int start,int end){
+
+	if(start>=end) return;
+	
+	int mid = (start+end)/2;
+	mergesort(arr,start,mid);
+	mergesort(arr,mid+1,end);
+	merge(arr,start,mid,mid+1,end);
+	
+}
+
+*/
+
 
 int main(){
 	
@@ -68,6 +116,6 @@ int main(){
 	for(int i=0;i<n;i++){
 		cout<<arr[i]<<" ";
 	}
-	
+	cout<<endl;
 	
 }
